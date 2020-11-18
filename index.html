@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, scale=1.0" name="viewport">
-    <title>DOM Assignment 1</title>
+    <title>Front End with JQuery</title>
     <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="node_modules/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.min.css">
     <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
@@ -24,22 +25,28 @@
                 <div class="form-group">
                     <label for="txt-id">Customer ID</label>
                     <input class="form-control" id="txt-id" placeholder="Eg. C001" type="text">
-                    <small class="form-text text-muted">
+                    <small class="form-text text-muted" id="helper-txt-id">
                         The Customer ID should follow the pattern CXXX; X={0-9}
                     </small>
                 </div>
                 <div class="form-group">
                     <label for="txt-name">Customer Name</label>
                     <input class="form-control" id="txt-name" placeholder="Eg. Lucky Prabath" type="text">
+                    <small class="form-text invalid-feedback" id="helper-txt-name">
+                        The Customer ID should follow the pattern CXXX; X={0-9}
+                    </small>
                 </div>
                 <div class="form-group">
                     <label for="txt-address">Customer Address</label>
                     <input class="form-control" id="txt-address" placeholder="Eg. #1234, Main St, Gampaha" type="text">
+                    <small class="form-text invalid-feedback" id="helper-txt-address">
+                        The Customer ID should follow the pattern CXXX; X={0-9}
+                    </small>
                 </div>
                 <hr>
                 <div class="form-group">
-                    <button class="btn btn-primary" id="btn-save">Save</button>
-                    <button class="btn btn-danger" id="btn-clear" type="reset">Clear</button>
+                    <button class="btn btn-primary" id="btn-save" type="button">Save</button>
+                    <button class="btn btn-danger" id="btn-clear" onclick="clearSelection()" type="reset">Clear</button>
                 </div>
             </form>
         </div>
@@ -86,6 +93,8 @@
 <footer>
     Copyright &copy; 2020 IJSE
 </footer>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
 <script src="js/customer-ctrl.js"></script>
 </body>
 </html>
